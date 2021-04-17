@@ -12,7 +12,7 @@ const myDrones = [
 const mongoose = require("mongoose");
 const Drones = require("../models/Drone.model.js");
 
-Drones.create({ myDrones })
+Drones.create(myDrones)
   .then(() => {
     console.log("3 Drones seeded");
     // close the connection
