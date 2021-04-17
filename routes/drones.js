@@ -12,7 +12,7 @@ router.get("/drones", (req, res, next) => {
     console.log(allDrones);
     //render DB elements to page
     //never start with / in render!!!
-    res.render(`drones/list.hbs`);
+    res.render(`drones/list.hbs`, { allDrones });
   });
 });
 
