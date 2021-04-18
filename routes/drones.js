@@ -27,10 +27,10 @@ router.get("/drones/create", (req, res, next) => {
 // Iteration #3: Add a new drone
 router.post("/drones/create", (req, res, next) => {
   //check info being sent from user
-  const { title, propellers, maxSpeed } = req.body;
-  console.log(title, propellers, maxSpeed);
+  const { name, propellers, maxSpeed } = req.body;
+  console.log(name, propellers, maxSpeed);
   //create new element with this info
-  Drones.create({ title, propellers, maxSpeed })
+  Drones.create({ name, propellers, maxSpeed })
     .then((data) => {
       //send the user somewhere
       res.redirect("/drones");
@@ -59,14 +59,14 @@ router.post("/drones/:id/edit", (req, res, next) => {
   const { id } = req.params;
 
   //get the body elements from post
-  const { title, propellers, maxSpeed } = req.body;
+  const { name, propellers, maxSpeed } = req.body;
   // use the body to update the DB
-  Drones.findByIdAndUpdate(id, { title, propellers, maxSpeed })
+  Drones.findByIdAndUpdate(id, { name, propellers, maxSpeed })
     .then((data) => {
       res.redirect("/drones");
     })
     .catch((err) => {
-      console.log(err);
+      res.render("drones/update-form.hbs", { data });
     });
 });
 
@@ -77,7 +77,7 @@ router.post("/drones/:id/delete", (req, res, next) => {
   const { id } = req.params;
   //now delete the element
   Drones.findByIdAndDelete(id)
-    .then(() => {
+    .then((data) => {
       res.redirect("/drones");
     })
     .catch(() => {
