@@ -4,11 +4,14 @@
 {{#each allDrones}}
     <li>
         <a href= "/drones/{{this._id}}/edit">{{this.name}}<a> 
-        
-        <form action="/drones/{{data._id}}/delete" method="POST">
+        <p>Propellers:{{this.propellers}}</p>
+        <p>Speed:{{this.maxSpeed}}</p>
+
+        <form action="/drones/{{this._id}}/delete" method="POST">
         <button type="submit">Delete</button>
         </form>
 
+            <br>
     </li>
 {{/each}}
 </ul>

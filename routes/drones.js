@@ -65,13 +65,12 @@ router.post("/drones/:id/edit", (req, res, next) => {
     .then((data) => {
       res.redirect("/drones");
     })
-    .catch((err) => {
+    .catch(() => {
       res.render("drones/update-form.hbs", { data });
     });
 });
 
 // Iteration #5: Delete the drone
-
 router.post("/drones/:id/delete", (req, res, next) => {
   //get id from user
   const { id } = req.params;

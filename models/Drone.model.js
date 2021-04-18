@@ -8,6 +8,6 @@ const droneSchema = new Schema({
   maxSpeed: Number,
 });
 
-const droneModel = model("Drone", droneSchema);
+const drones = model("Drone", droneSchema);
 
-module.exports = droneModel;
+module.exports = drones;
