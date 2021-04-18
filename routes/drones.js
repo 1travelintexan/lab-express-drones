@@ -32,12 +32,12 @@ router.post("/drones/create", (req, res, next) => {
   //create new element with this info
   Drones.create({ title, propellers, maxSpeed })
     .then((data) => {
-      console.log(data);
+      //send the user somewhere
+      res.redirect("/drones");
     })
     .catch((err) => {
       console.log(err);
     });
-  //send the user somewhere
 });
 
 router.get("/drones/:id/edit", (req, res, next) => {
@@ -52,7 +52,18 @@ router.post("/drones/:id/edit", (req, res, next) => {
 
 router.post("/drones/:id/delete", (req, res, next) => {
   // Iteration #5: Delete the drone
-  // ... your code here
+
+  //get id from user
+  const { id } = req.params;
+
+  //now delete the element
+  Drones.findByIdAndDelete(id)
+    .then(() => {
+      res.redirect("/drones");
+    })
+    .catch(() => {
+      console.log(err);
+    });
 });
 
 module.exports = router;
