@@ -19,12 +19,25 @@ router.get("/drones", (req, res, next) => {
 router.get("/drones/create", (req, res, next) => {
   // Iteration #3: Add a new drone
   Drones.create().then(() => {
+    //show form page
     res.render("drones/create-form.hbs");
   });
 });
 
 router.post("/drones/create", (req, res, next) => {
   // Iteration #3: Add a new drone
+  //check info being sent from user
+  const { title, propellers, maxSpeed } = req.body;
+  console.log(title, propellers, maxSpeed);
+  //create new element with this info
+  Drones.create({ title, propellers, maxSpeed })
+    .then((data) => {
+      console.log(data);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  //send the user somewhere
 });
 
 router.get("/drones/:id/edit", (req, res, next) => {
