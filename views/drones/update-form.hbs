@@ -5,8 +5,8 @@
 <h4>Speed: {{data.maxSpeed}}</h4>
 
 
-<form action="/drones" method="get">
-    <button>Edit</button>
+<form action="/drones/{{data.id}}/edit" method="get">
+    <button type="submit">Edit</button>
 </form>
 
 <form action="/drones.{{data._id}}/delete" method="POST">
