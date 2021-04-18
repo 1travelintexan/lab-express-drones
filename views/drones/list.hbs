@@ -3,7 +3,7 @@
 <ul>
 {{#each allDrones}}
 <li>
-    <a href="/drones/:id/edit"></a>
+    <a href="`/drones/{{data.id}}/edit`"></a>
     Name: {{this.name}}
     Propellers: {{this.propellers}}
     Speed: {{this.maxSpeed}}
