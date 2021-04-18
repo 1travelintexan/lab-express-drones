@@ -1,9 +1,35 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  background-color: rgba(9, 83, 243, 0.753);
+  background-color: rgba(27, 29, 34, 0.753);
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+.btn-dark {
+  margin: 30px;
+  font-size: 30px;
+  height: 70px;
+  width: 250px;
+}
+
+.btn-danger {
+  height: 30px;
+  width: 120px;
+  font-size: 15px;
+}
+
+.names {
+  font-size: 40px;
+}
+
+.list {
+  list-style: none;
+  width: 300px;
+  font-size: 20px;
+  margin: 40px;
+  padding: 20px;
+  border: 2px solid rgb(12, 11, 11);
+  border-radius: 10px;
 }
 
 a {
@@ -20,16 +46,25 @@ h1 {
   color: rgb(220, 245, 237);
   margin: 60px;
   font-size: 80px;
-  background-color: darkslategrey;
-  border-radius: 10px;
+  background-color: rgb(17, 17, 37);
+  border-radius: 30px;
   text-shadow: 4px, 4px, darkblue;
 }
 
 h2 {
   color: rgb(220, 248, 239);
-  margin: 60px;
+  margin-top: 60px;
   font-size: 80px;
   background-color: darkslategrey;
   border-radius: 10px;
   text-align: center;
+}
+
+form {
+  margin: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 25px;
 }
