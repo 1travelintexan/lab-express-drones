@@ -18,12 +18,13 @@ router.get("/drones", (req, res, next) => {
 
 router.get("/drones/create", (req, res, next) => {
   // Iteration #3: Add a new drone
-  // ... your code here
+  Drones.create().then(() => {
+    res.render("drones/create-form.hbs");
+  });
 });
 
 router.post("/drones/create", (req, res, next) => {
   // Iteration #3: Add a new drone
-  // ... your code here
 });
 
 router.get("/drones/:id/edit", (req, res, next) => {
