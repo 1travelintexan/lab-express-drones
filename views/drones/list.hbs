@@ -2,10 +2,8 @@
 
 <ul>
 {{#each allDrones}}
-<li>
-    <a href="`/drones/{{data.id}}/edit`">
-    Name: {{this.name}}
-    </a>  
-</li>
+    <li>
+        <a href= "/drones/{{this._id}}/edit">{{this.name}}<a> 
+    </li>
 {{/each}}
 </ul>

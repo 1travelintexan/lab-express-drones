@@ -47,7 +47,7 @@ router.get("/drones/:id/edit", (req, res, next) => {
   Drones.findById(id)
     //show the form (update-form.hbs)
     .then((data) => {
-      res.render("update-form.hbs", { data });
+      res.render("drones/update-form.hbs", { data });
     })
     .catch((err) => {
       console.log(err);
@@ -61,7 +61,7 @@ router.post("/drones/:id/edit", (req, res, next) => {
   //get the body elements from post
   const { title, propellers, maxSpeed } = req.body;
   // use the body to update the DB
-  Drones.findByIdAndUpdate(id, { titl, propellers, maxSpeed })
+  Drones.findByIdAndUpdate(id, { title, propellers, maxSpeed })
     .then((data) => {
       res.redirect("/drones");
     })
